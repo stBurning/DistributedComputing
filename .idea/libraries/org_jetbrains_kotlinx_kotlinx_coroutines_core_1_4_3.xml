@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3" type="repository">
+    <properties maven-id="org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3" packaging="pom" />
+    <CLASSES>
+      <root url="file://$USER_HOME$/.m2/repository/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.4.3/kotlinx-coroutines-core-1.4.3.pom" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.4.3/kotlinx-coroutines-core-jvm-1.4.3.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.4.30/kotlin-stdlib-1.4.30.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.30/kotlin-stdlib-common-1.4.30.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlinx/kotlinx-coroutines-core/1.4.3/kotlinx-coroutines-core-1.4.3-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.4.3/kotlinx-coroutines-core-jvm-1.4.3-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.4.30/kotlin-stdlib-1.4.30-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.30/kotlin-stdlib-common-1.4.30-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
