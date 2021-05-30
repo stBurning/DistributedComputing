@@ -21,7 +21,7 @@ fun main() = runBlocking {
         log("Multiplication between two matrices N[${m1.rows},${m1.cols}] and M[${m2.rows},${m2.cols}]")
         val validCount = 2 // Сколько раз будет пересчитываться операция
         val workersCount = server.getClientsCount()
-        
+
         for (row in 0 until m1.rows) {
             val part = createDoubleMatrix(m1.cols, 1) { k, _ -> m1[k, row] }
             for (i in 0 until validCount) {
@@ -32,7 +32,8 @@ fun main() = runBlocking {
                     server.addMessageListener {
                         val message = Message.fromJson(it)
                         if(message?.id == workerId && message.part == validCount*row + i){
-                            log("Response: $message")
+                            log("TaskResult: $message")
+                            doubleMatrixFromJson(message.data)
                         }
                     }
                 }

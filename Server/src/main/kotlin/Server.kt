@@ -65,9 +65,7 @@ class Server(port: Int = 5804) {
                 }
                 addExceptionListener {
                     log("Exception: $it")
-                    exceptionListeners.forEach { l ->
-                        l(it)
-                    }
+                    exceptionListeners.forEach { l -> l(it) }
                 }
                 communicate()
             }
