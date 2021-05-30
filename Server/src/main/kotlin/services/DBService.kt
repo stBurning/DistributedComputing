@@ -7,7 +7,6 @@ import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.SQLException
 
-
 class DBService(
     private val dbName: String,
     private val address: String = "localhost",
@@ -16,6 +15,7 @@ class DBService(
     private val password: String = "root"
 ) {
     private var connection: Connection? = null
+    private fun log(message: Any?) = println("[DATABASE_SERVICE] $message")
 
     init {
         connection = DriverManager.getConnection(
@@ -80,6 +80,32 @@ class DBService(
         }
         s?.executeBatch()
         s?.clearBatch()
+    }
+
+    fun addRow(table: String, id: Int, row: Int, matrix: DoubleMatrix) {
+        val s = connection?.createStatement()
+        for (j in 0 until matrix.rows) {
+            s?.addBatch(
+                "INSERT INTO `${table}` (`id`, `row`, `col`, `value`) " +
+                        "VALUES ('$id', '$row', '$j', '${matrix[0, j]}');"
+            )
+        }
+
+        s?.executeBatch()
+        s?.clearBatch()
+        log("Ряд №${row} итоговой матрицы добавлен в базу данных")
+    }
+
+    fun getMaxId(table: String): Int {
+
+        val s = connection?.createStatement()
+        val idQuery = "SELECT MAX(id) FROM `matrices`"
+        val response = s?.executeQuery(idQuery)
+        if (response?.next() == true) {
+            return response.getInt("MAX(id)")
+        } else {
+            throw Exception("Couldn't get information about this matrix")
+        }
     }
 
 

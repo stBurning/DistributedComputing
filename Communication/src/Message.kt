@@ -3,11 +3,10 @@ import com.fasterxml.jackson.databind.ObjectMapper
 
 class Message(
     @JsonProperty("id") val id: Int,
-    @JsonProperty("part") val part: Int,
     @JsonProperty("data") val data: String
 ) {
     override fun toString(): String {
-        return "[ID: $id, Part: $part] $data"
+        return "[ID: $id] $data"
     }
 
     fun json(): String {
