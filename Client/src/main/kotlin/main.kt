@@ -23,14 +23,12 @@ fun main() {
             val m2 = doubleMatrixFromJson(request[1])
             if (m1 != null && m2 != null) {
                 val result = (m1.x(m2)).toJson()
-                Thread.sleep(ThreadLocalRandom.current().nextLong(50, 500))
                 println("[$id] Отправил: $result")
                 client.send(Message(id, result).json())
             }
         }
 
     }
-
     client.addExceptionListener { e ->
         println("[Exception] $e")
         exitProcess(0)
